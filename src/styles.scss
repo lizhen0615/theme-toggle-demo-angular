@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// 整体背景色
+@mixin mixin-bg-color($dark-color, $light-color) {
+
+  [data-theme-style="dark"] & {
+    background-color: $dark-color;
+  }
+
+  [data-theme-style="light"] & {
+    background-color: $light-color;
+  }
+}
+
+// 头部背景色
+@mixin mixin-hbg-color($dark-color, $light-color) {
+
+  [data-theme-style="dark"] & {
+    background-color: $dark-color;
+  }
+
+  [data-theme-style="light"] & {
+    background-color: $light-color;
+  }
+}
+
+.container {
+  height: 100vh;
+  @include mixin-bg-color(#fff, #fff);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 52px;
+  color: #fff;
+  line-height: 52px;
+  @include mixin-hbg-color(#294E80, #cc6699);
+
+  a {
+    color: #fff;
+  }
+}
